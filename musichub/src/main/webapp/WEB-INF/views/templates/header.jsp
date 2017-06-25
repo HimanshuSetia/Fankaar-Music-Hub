@@ -11,7 +11,7 @@
 	
 <!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<link rel="stylesheet" href="./resources/css/stylesheet.css">
+	<link rel="stylesheet" href="resources/css/stylesheet.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">	
 	<link
 	href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
@@ -73,6 +73,8 @@
 							</ul>
 					</li>
 					 </c:if>
+						
+
 								
 				</ul>
 				<div>
@@ -88,8 +90,14 @@
 							
 
 						</c:if>
+						<c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
+							<c:if test="${pageContext.request.userPrincipal.name != null}">
+								<li><a href="<c:url value="/cart/getCartId"/>" class="glyphicon glyphicon-shopping-cart"></a></li>
+							</c:if>
+						</c:if>
 						
-						<c:if test="${pageContext.request.userPrincipal.name == null}">
+						
+						<c:if test="${pageContext.request.userPrincipal.name == null}">2
 				<li><a href="<c:url value="/login"/>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				<li><a href="<c:url value="/register"/>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 			  </c:if>
@@ -99,7 +107,8 @@
 </div>
 	</div>
 </nav>	
- 
+ <script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>

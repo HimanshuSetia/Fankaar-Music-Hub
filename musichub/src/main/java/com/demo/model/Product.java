@@ -41,7 +41,18 @@ public class Product implements Serializable //implements Serializable so as all
 	@ManyToOne
 	@JoinColumn(name = "cid")
 	private Category category;
+	
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	 @JsonIgnore
+	 private List<CartItem> cartItemList;
 
+	
+	public List<CartItem> getCartItemList() {
+		return cartItemList;
+	}
+	public void setCartItemList(List<CartItem> cartItemList) {
+		this.cartItemList = cartItemList;
+	}
 	@ManyToOne
 	@JoinColumn(name = "sid")
 	private Supplier supplier;

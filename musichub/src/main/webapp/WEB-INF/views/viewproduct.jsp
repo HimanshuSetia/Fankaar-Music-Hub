@@ -1,4 +1,6 @@
 <%@ include file="./templates/header.jsp"%>
+<head>
+
 <style>
 body {
 	background: linear-gradient(to bottom, #ffffcc 1%, #669999 100%);
@@ -31,7 +33,8 @@ ul.unstyled {
 	padding: 0;
 }
 </style>
-<body data-ng-app="app" ng-controller="ProductController">
+</head>
+<body data-ng-app="app" ng-controller="ProductController"><!-- ng----app then contoller then click or what so ever -->
 <div class="se-pre-con"></div>
 	<div class="container-wrapper">
 		<div class="container">
@@ -64,22 +67,36 @@ ul.unstyled {
 						<c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
 							
 						</c:if>
-						
+						<c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
+							<c:if test="${pageContext.request.userPrincipal.name != null}">
+							<a href="#" class="btn btn-warning btn-lg"
+								data-ng-click="addToCart(${product.id })"> <span
+								class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+
+							</a>
+							</c:if>	
+						</c:if>
 						<a href="<c:url value="/prodlist" />" class="btn btn-danger btn-lg" >View more Products</a> <br />
 					</div>
 
 				</div>
-
+						
 			</div>
-
+						
 		</div>
 	</div>
 
 	<br />
+	
+
+<script src="<c:url value="/resources/js/controller.js"/>"></script>
+
 	<script>	
 			$(window).load(function() {
 		// Animate loader off screen
 		$(".se-pre-con").fadeOut("slow");;
 	});
 			</script>
+		
+	</body>
 	<%@ include file="./templates/footer.jsp"%>+

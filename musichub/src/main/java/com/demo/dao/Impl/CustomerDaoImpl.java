@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.demo.dao.CustomerDao;
 import com.demo.model.Authorities;
 import com.demo.model.BillingAddress;
+import com.demo.model.Cart;
 /*import com.demo.model.Cart;*/
 import com.demo.model.Customer;
 import com.demo.model.ShippingAddress;
@@ -50,17 +51,17 @@ public class CustomerDaoImpl implements CustomerDao {
 		authority.setRole("ROLE_USER");
 		authority.setUsername(customer.getUsername());
 
-		/*Cart cart = new Cart();
+		Cart cart = new Cart();
 		customer.setCart(cart);
 
-		cart.setCustomer(customer);*/
+		cart.setCustomer(customer);
 		
 		session.saveOrUpdate(billingAddress);
 		session.saveOrUpdate(shippingAddress);
 		session.saveOrUpdate(users);
 		session.saveOrUpdate(authority);
 		session.saveOrUpdate(customer);// insert into customer values (.....)
-		/*session.saveOrUpdate(cart);*/
+		session.saveOrUpdate(cart);
 
 		session.flush();
 		session.close();

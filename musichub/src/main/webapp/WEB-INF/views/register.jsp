@@ -44,7 +44,7 @@
 
 <form:form action="${url }" commandName="customer" >
 
-<H4><b><u>PERSONAL DETAILS</u></b></H4>
+<b><u>PERSONAL DETAILS</u></b>
 <div class="form-group">
 <form:label class="col-md-4 control-label" path="firstname">FIRST NAME</form:label>
 <div class="col-md-6">

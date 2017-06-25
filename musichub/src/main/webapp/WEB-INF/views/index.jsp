@@ -54,7 +54,7 @@
 <div class="se-pre-con"></div>
 <br/><br/>	
 		
-			<div id="my-slider" class="carousel slide" data-ride="carousel" data-wrap="true" data-interval="2100" >
+			<div id="my-slider" class="carousel slide" data-ride="carousel" data-wrap="true" data-interval="2100" data-pause="hover">
 				
 				<ol class="carousel-indicators">
 					<li data-target="#my-slider" data-slide-to="0" class="active">

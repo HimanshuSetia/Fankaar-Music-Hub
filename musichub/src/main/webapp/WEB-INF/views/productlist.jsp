@@ -9,7 +9,41 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Browse Products</title>
-
+<style type="text/css">
+.scrollToTop{
+	width:100px; 
+	height:130px;
+	padding:10px; 
+	text-align:center; 
+	background: whiteSmoke;
+	font-weight: bold;
+	color: #444;
+	text-decoration: none;
+	position:fixed;
+	top:75px;
+	right:40px;
+	display:none;
+	background: url('https://cdn1.iconfinder.com/data/icons/education-set-7/512/arrow5-up-16.png') no-repeat 0px 20px;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}
+	.pic{
+	width:100px;
+	height:80px;
+}
+.picbig{
+	position: absolute;
+	width:0px;
+	-webkit-transition:width 0.3s linear 0s;
+	transition:width 0.3s linear 0s;
+	z-index:10;
+}
+.pic:hover + .picbig{
+	width:250px;
+	height:200px
+}
+</style>
 </head>
 <body>
 
@@ -54,7 +88,8 @@
 					<td>${pd.id}</td>
 						<td>
 			
-				<img  src="<c:url value="/resources/images/${pd.id}.jpg" />" alt="error" width="120" height="120" />
+				<img class="pic"  src="<c:url value="/resources/images/${pd.id}.jpg" />" alt="error" width="120" height="120" />
+				<img class="picbig"  src="<c:url value="/resources/images/${pd.id}.jpg" />" alt="error" width="120" height="120" />
 				</td>
 					<td>${pd.name}</td>				
 					<td>${pd.description}</td>
@@ -85,11 +120,32 @@
 									
 				</tr>
 			</c:forEach>
+			<a href="#" class="scrollToTop">Scroll To Top</a>
 		</table>
+		
 </div>
 </div>
 </div>
-	
+	<script>
+	$(document).ready(function(){
+		
+		//Check to see if the window is top if not then display button
+		$(window).scroll(function(){
+			if ($(this).scrollTop() > 100) {
+				$('.scrollToTop').fadeIn();
+			} else {
+				$('.scrollToTop').fadeOut();
+			}
+		});
+		
+		//Click event to scroll to top
+		$('.scrollToTop').click(function(){
+			$('html, body').animate({scrollTop : 0},800);
+			return false;
+		});
+		
+	});
+	</script>
 </body>
 <br/>
 </html>

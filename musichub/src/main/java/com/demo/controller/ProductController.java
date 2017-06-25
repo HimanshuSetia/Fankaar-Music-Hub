@@ -31,15 +31,6 @@ public class ProductController {
 
 	@Autowired
 	private ProductService productService;
-	@Autowired
-	private CategoryService categoryService;
-	@Autowired
-	private SupplierService supplierService;
-	
-	private Path path;
-	
-	
-	
 	@RequestMapping("/view_all")
 	public String getallProducts(Model model) {
 		List<Product> products = productService.getAllProducts();

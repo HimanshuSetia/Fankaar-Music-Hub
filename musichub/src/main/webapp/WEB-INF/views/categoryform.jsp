@@ -38,6 +38,7 @@ body {
 <div class="form-group">
 <label class="col-md-4 control-label"for="categoryDetails">CategoryDetails</label>
 <div class="col-md-6">
+<span style="color: #ff0000">${catMsg}</span>
 <form:input path="categoryDetails" class="form-control"/>
 <form:errors path="categoryDetails" cssStyle="color:#ff0000"></form:errors>
 </div>
