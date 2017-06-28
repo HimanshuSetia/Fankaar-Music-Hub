@@ -160,7 +160,7 @@
 		// Animate loader off screen
 		$(".se-pre-con").fadeOut("slow");;
 	});
-			</script>
+		</script>
 	<%@include file="templates/footer.jsp" %>
 	
 

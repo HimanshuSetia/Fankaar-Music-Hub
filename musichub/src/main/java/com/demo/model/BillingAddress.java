@@ -6,7 +6,9 @@ import javax.persistence.*;
 
 import com.demo.model.Customer;
 @Entity
-public class BillingAddress implements Serializable {
+public class BillingAddress implements Serializable {public BillingAddress() {
+	// TODO Auto-generated constructor stub
+}
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)

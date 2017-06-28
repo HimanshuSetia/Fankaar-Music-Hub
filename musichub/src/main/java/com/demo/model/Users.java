@@ -6,7 +6,9 @@ import javax.persistence.*;
 
 @Entity
 public class Users implements Serializable {
-
+public Users() {
+	// TODO Auto-generated constructor stub
+}
 	@Id 
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int usersId; 

@@ -30,6 +30,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Product implements Serializable //implements Serializable so as all vars are not initialized automt. . serializable is an interface and it doesnt have any function
 {
+	public Product() {
+	// TODO Auto-generated constructor stub
+}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

@@ -10,6 +10,9 @@ import javax.persistence.Id;
 
 @Entity
 public class Authorities implements Serializable { 
+	public Authorities() {
+		// TODO Auto-generated constructor stub
+	}
 	 @Id 
 	 @GeneratedValue(strategy=GenerationType.AUTO)  	
 	 private int authoritiesId; 

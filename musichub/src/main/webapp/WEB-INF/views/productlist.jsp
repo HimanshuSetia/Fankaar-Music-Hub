@@ -111,6 +111,7 @@
 					<a href="${delete }"><span class="glyphicon glyphicon-remove"></span></a>
 					</td>
 					
+					
 					<td>
 					<c:url var="edit" value="/admin/editform/${pd.id }"></c:url>
 					<a href="${edit }"><span class="glyphicon glyphicon-pencil"></span></a>

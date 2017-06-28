@@ -8,7 +8,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Category implements Serializable{ 
-	
+	public Category() {
+		// TODO Auto-generated constructor stub
+	}
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;

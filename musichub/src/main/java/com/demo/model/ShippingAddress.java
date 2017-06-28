@@ -10,7 +10,9 @@ import com.demo.model.Customer;
 @Entity
 public class ShippingAddress implements Serializable {
 
-  
+  public ShippingAddress() {
+	// TODO Auto-generated constructor stub
+}
 
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)

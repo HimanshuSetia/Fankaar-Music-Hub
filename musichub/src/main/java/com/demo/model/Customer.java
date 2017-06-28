@@ -18,6 +18,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Customer implements Serializable {
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private int id;
